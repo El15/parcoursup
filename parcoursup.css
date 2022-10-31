@@ -1,4 +1,10 @@
-body
-{
+body{
 	background-color: #fffde7;
+}
+
+div {
+	border-radius: 40px;
+	background-color: #cfcebd;
+	padding: 15px;
+	border: 4px solid #fffde7;
 }
