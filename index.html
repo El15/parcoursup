@@ -1,4 +1,23 @@
 <html>
+  <body onload="changeTR_color()">
+    <script>
+      function toggleColor(x) {
+        if (x.className == "off") {x.className = "on";} else {x.className = "off";} 
+      }
+      function changeTR_color() {
+        currentdate = new Date();
+        var oneJan = new Date(currentdate.getFullYear(),0,1);
+        var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
+        //numberOfDays-2 car 1 et 2 janvier sont samedi et dimanche, à enlever
+        var result = Math.floor((numberOfDays-2) / 7);
+        result += 1;
+        var currentID = "tr_" + result;	
+        document.getElementById(currentID).style.color = "black";
+        document.getElementById(currentID).style.font = "bold 18px arial,serif";
+        //document.getElementById(currentID).style.backgroundColor = "#C9BAB9";
+        //document.getElementById(currentID).style.background = "green";
+      }
+    </script>
   <link rel="stylesheet" type="text/css" href="parcoursup.css" />
   <div>
     <div><h1><i>Tu veux aller vite? Prends ton temps...</i></h1></div>
@@ -24,8 +43,11 @@
           <li><a href="https://www.chacunsavoie.com/" target="_blank" rel="noopener noreferrer">Métiers et formations</a></li>
           <li><a href="https://www.topuniversities.com/university-rankings/world-university-rankings/2023/" target="_blank" rel="noopener noreferrer"><i>World University Rankings</i></a></li>
         </ul>
+		
+		<table>
+	  <tr><td class="off" onclick="toggleColor(this)">Data</td><td class="off" onclick="toggleColor(this)">ECOLE</td><td class="off" onclick="toggleColor(this)">DOSSIER</td></tr>
+	  </table>
   </div>
-
   <div>
     <h1>REMUNERATION</h1>
       <ul>
@@ -107,4 +129,5 @@
             </ul>
         </ul>
       </div>
+  </body>
 </html>
