@@ -397,15 +397,61 @@
 		<h3>10-DIAGRAMS</h3>
 			<li><a href="https://dreampuf.github.io/GraphvizOnline/" target="_blank" rel="noopener noreferrer">Graphviz Online</a></li>
 				<code>
-					digraph {</br>
-						Soleil -> Etoile
-						Soleil -> Energie
-						Energie -> From : Fusion nucléaire
-						Energie -> To : Semi-conducteur : Silicium (Si)
-					}
-				dot -Tsvg -o my.svg my_diagramme.txt
+					</br>digraph { </br>
+						Soleil -> Etoile</br>
+						Soleil -> Energie</br>
+						Energie -> From : Fusion nucléaire</br>
+						Energie -> To : Semi-conducteur : Silicium (Si)</br>
+					}</br>
+				dot -Tsvg -o my.svg my_diagramme.txt</br>
 				</code>
 			<li><a href="https://github.com/hpcc-systems/hpcc-js-wasm" target="_blank" rel="noopener noreferrer">Diagram in HTML</a></li>
+			<li><a href="https://www.plantuml.com" target="_blank" rel="noopener noreferrer">PlantUML</a></li>
+				<code>
+					</br>@startuml</br>
+					!theme cerulean</br>
+					</br>
+					autonumber</br>
+					</br>
+					participant Al</br>
+					</br>
+					box "Echanges en interne"</br>
+					participant Bo</br>
+					participant Ch</br>
+					end box</br>
+					</br>
+					Al -> Bo ++ : Hello</br>
+					Al -> Bo : ça va?</br>
+					Al <-- Bo : Re ça va</br>
+					Al -> Bo : config?</br>
+					Bo -> Ch ++ : config?</br>
+					...</br>
+					Ch -> Ch : check config</br>
+					Bo <-- Ch -- :  out config</br>
+					Al <-- Bo -- : out config</br>
+					</br>
+					@enduml</br>
+				</code></br>
+				<code>
+					</br>@startuml</br>
+					!theme cerulean</br>
+					skinparam handwritten true</br>
+					</br>
+					start</br>
+					- Open GLMF</br>
+					</br>
+					if (Read?) then (Yes)</br>
+					- Re-read</br>
+					- Try configs</br>
+					else (non)</br>
+					- Read</br>
+					endif</br>
+					</br>
+					- Out all</br>
+					</br>
+					stop</br>
+					@enduml</br>
+				</code>
 	</ul>
 </div>
 	  
